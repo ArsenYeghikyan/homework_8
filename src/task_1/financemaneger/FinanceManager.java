@@ -16,9 +16,10 @@ public class FinanceManager {
         }
 
 
-        balanceAfterChanges +=  deposit;
+        customer.setBalance(customer.getBalance() + deposit);
+        ;
 
-        printCustomerInfo(customer, balanceAfterChanges);
+        printCustomerInfo(customer);
 
     }
 
@@ -30,18 +31,19 @@ public class FinanceManager {
             System.out.println("wrong parameter");
             return;
         }
-        balanceAfterChanges -=  cash;
-        printCustomerInfo(customer,balanceAfterChanges);
+        customer.setBalance(customer.getBalance() - cash);
+
+        printCustomerInfo(customer);
 
     }
 
-    private void printCustomerInfo(Customer customer, double customerBalance) {
+    private void printCustomerInfo(Customer customer) {
 
         System.out.println("Name: " + customer.getName() +
-                           "\nLast Name: " + customer.getLastName() +
-                           "\nage: " + customer.getAge() +
-                           "\nID: " + customer.getId() +
-                           "\nBalance: " + customerBalance);
+                "\nLast Name: " + customer.getLastName() +
+                "\nage: " + customer.getAge() +
+                "\nID: " + customer.getId() +
+                "\nBalance: " + customer.getBalance());
 
     }
 

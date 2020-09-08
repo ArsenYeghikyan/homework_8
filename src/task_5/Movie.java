@@ -33,11 +33,14 @@ public class Movie {
 
     public static void maxRating(Movie[] movies) {
         double max = movies[0].rating;
-        for (Movie movie : movies) {
-            if (movie.rating > max) {
-                max = movie.rating;
-                System.out.println("Title: " + movie.title + "\nRating: " + max);
-            }
+
+            for (int i = 0; i < movies.length; i++) {
+                if (movies[i].rating > max) {
+                    max = movies[i].rating;
+                    System.out.println("Title: " + movies[i].title + "\nRating: " + max);
+                }
+
+
         }
 
     }

@@ -1,15 +1,22 @@
 package task_1.start;
 
-import task_1.custumer.Customer;
-import task_1.financemaneger.FinanceManager;
+import task_1.customer.Customer;
+import task_1.customer.VipCustomer;
+
 
 public class Main {
     public static void main(String[] args) {
-        FinanceManager financeManager = new FinanceManager();
+
         Customer customer = new Customer();
 
-        financeManager.cashIn(150,customer);
-        financeManager.cashOut(15,customer);
+        customer.updateBalance(1000,customer);
+        customer.updateBalance(5000,customer);
+
+        Customer vipCustomer = new VipCustomer();
+
+        vipCustomer.updateBalance(200, vipCustomer);
+        vipCustomer.updateBalance(3000, vipCustomer);
+
 
     }
 }
